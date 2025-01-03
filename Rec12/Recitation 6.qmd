@@ -1,0 +1,174 @@
+---
+title: "Recitation 6"
+author: "APEC 8002"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8002 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## Module 4
+
+::: {style="font-size: 80%;"}
+**Revenue cost function**
+
+- Cost minimization problem interms of producing a certain amount of revenue
+
+- $$\min_{z \geq 0} C(w, z) \quad \text{subject to} \quad p_s \cdot z_s \geq R_s \quad \text{for } s = 1, \dots, S$$
+
+- Lagrangian: $$\mathcal{L} = C(w, z) + \sum_{s=1}^S \lambda_s (R_s - p_s \cdot z_s)$$
+
+- \textbf{Steps to Solve:}
+
+- Take the first-order conditions (FOCs) with respect to $z_s$ and the state-contingent Lagrangian multipliers $\lambda_s$.
+
+- Solve for the state-contingent supply curves $z^*(w, R, p)$.
+
+- Substitute $z^*(w, R, p)$ into the conditional cost function:
+    $$
+    C(w, R, p) = C(w, z^*(w, R, p)).
+   $$
+
+- Certainty equivalent:$$
+    ce^{R}(w, R, p) = max_{e}{e\in R: C(w, p, e1^{s}) \leq C(w, R, p)}$$
+:::
+::: footer
+:::
+    
+-----------------
+
+## Exercise 1
+
+Consider the cost function $C(w, z) = w_1^{\frac{3}{5}} w_2^{\frac{2}{5}} z_1 z_2$ where w are input price, z are outputs and $\beta$ is a constant parameter. Note that this cost function is derived from a production possibility set that is nonempty, closed, and satisfies weak free disposal of inputs and outputs. Suppose that $z_1$ represents output in state 1 and $z_2$ represents output in state 2 of an uncertain world.
+If $p_1$ is the price received for output in state 1 and $p_2$ is the price received for output in state 2, derive the producer’s **revenue cost function.**
+
+- Simply note that only one output is being produced in each state, so:$R_1 = p_1z_1, R_2 = p_2z_2$
+
+- $c = w_1^{\frac{3}{5}} w_2^{\frac{2}{5}} z_1^{*} z_2^{*}$
+
+------------
+
+**Expected Profit Maximization**
+
+- Question: Why does a risk neutral producer facing uncertainty solve this problem rather than maximizing their expected utility?
+
+- Answer: Risk neutrality $⇒ E(u(π))=u(Eπ)$
+
+- max$ϕ⋅π$
+
+- $max_{R≥0}ϕ⋅(R−C(p,w,R)1^{S})$
+
+-------
+
+::: {style="font-size: 90%;"}
+**Utility Maximization for a Risk Averse Producer**
+
+- Risk averse $⇒E(u(π))≤u(Eπ)$ i.e. i.e. $W(π)≤W(\bar{π}1^{S})$
+
+- $W(π)$ is the producer’s utility of profit across different states, where $π=(π_1,⋯,π_S)$
+
+- Subjective probability beliefs:$\phi_s = \frac{W_s(1_s)}{\sum_{t=1}^S W_t(1_s)}$, where $W_s = \frac{\delta W(\pi)}{\delta \pi_s}$
+
+- Optimization Problem:$$
+    \max_{R \geq 0} W(R - C(p, w, R) 1_S) \textbf{ with FOCs:}\\ 
+     W_s(\pi^*) - \sum_{t=1}^S W_t(\pi^*) \frac{\partial C(p, w, R^*)}{\partial R_s} \leq 0\\
+     \left[W_s(\pi^*) - \sum_{t=1}^S W_t(\pi^*) \frac{\partial C(p, w, R^*)}{\partial R_s}\right] R^*_s = 0$$
+     
+- Certainty equivalent:$$
+    ce(\pi)= min_{c}({c \in R}:W(c1^{s}) \geq W(\pi)))$$
+:::
+::: footer
+:::
+
+-------------
+
+## Exercise 2
+
+Consider an uncertain world with only two mutually exclusive states denoted by a and b. A producer produces output $z_a≥0$ in state a and $z_b≥0$ in state b with two inputs, x1 and x2, at a cost of,$$
+C(w_1, w_2, z_a, z_b) = 2 w_1^{\frac{1}{2}} w_2^{\frac{1}{2}} (z_a^2 + z_b^2)$$
+Given this cost function, the competitive producer’s profits in states a and b are:
+$$
+\pi_a = p_a z_a - 2 w_1^{\frac{1}{2}} w_2^{\frac{1}{2}} (z_a^2 + z_b^2),
+\pi_b = p_b z_b - 2 w_1^{\frac{1}{2}} w_2^{\frac{1}{2}} (z_a^2 + z_b^2)
+$$
+Question 1)  For the state contingent output za and zb, what are the producer’s **conditional input demands?**
+
+- Shephard'e lemma
+
+-----------------------
+
+Question 2) Suppose a risk averse producer’s utility of profit function is $W(\pi_a, \pi_b) = 3 - e^{-\mu \pi_a} - 2 e^{-\mu \pi_b}$.
+
+2.i) **What are the producer’s subjective probabilities for state a and b?**
+
+- First calculate $W_a$ and $W_b$, then use formula of subjective probability
+
+- $\phi_a = 1/3$, $\phi_b = 2/3$
+
+2.ii) For $π_a$ and $π_b$ in general, what is the producer’s **certainty equivalent profit?**
+
+- $$ce = \frac{1}{\mu}ln(\frac{3}{(\frac{1}{e^{\mu\pi_a}} + \frac{2}{e^{\mu\pi_b}})})$$
+
+------------------
+
+Question 3) Suppose instead that the producer is risk neutral with subjective probability beliefs $ϕ_a>0$ and $ϕ_b>0$ for state a and 
+
+3.i) **Find this producer’s optimal outputs for states a and b**. You can assume the solution is interior.
+
+- Expected Profit Maximization:$$
+   max_{z_a, z_b} E\pi = \phi_a\pi_a + \phi_b\pi_b$$
+   
+- $z_a^{*}= \frac{\phi_a p_a}{4(\phi_a+\phi_b)w_1^{1/2}w_2^{1/2}}, z_b^{*}= \frac{\phi_b p_b}{4(\phi_a+\phi_b)w_1^{1/2}w_2^{1/2}}$
+
+3.ii) Given these optimal outputs, what are the producer’s **unconditional input demands?**
+
+- Use Shephard's lemma to get conditional input demand and then use duality to convert them into $x_1^*$ and $x_2^*$.
+
+-----------------
+
+## Exercise 3
+
+![](pic1.png)
+
+-----------------
+
+a) Set up the **manufacture’s utility maximization problem** and derive the first-order conditions for an interior solution for q.
+
+- The manufacturer's optimization problem is:$$
+    max_{q}\quad W(pq-c(q), (p-t)q-c(q))$$
+
+- FOC:$$
+   W_N(p-c^{'}(q)) + W_T((p-t)- c^{'}(q))=0$$
+  
+- $$p -\frac{W_N}{W_N+W_T}t = c^{'}(q)$$
+
+---------------
+
+b) If the manufacture finds out if there is going to be tariff beofre choosing its ouputs it's state contingent profits are:$$
+    y^{N}(q^{N}) = pq^{N} - c(q^{N}),  \quad y^{T}(q^{T}) = (p-t) q^{T} - c(q^{T})$$
+**Set up the manufacture’s utility maximization problem and derive its first-order conditions for an interior solution** on $q^N4 and $q^T$. 
+
+- The manufacturer's optimization problem is:$$
+    max_{q}\quad W(pq^{N}-c(q^{N}), (p-t)q^{T}-c(q^{T}))$$
+
+- FOC:$$
+   W_N(p-c^{'}(q^{N})) + W_T((p-t)- c^{'}(q^{T}))=0$$
+   
+- $p= c^{'}(q^{N}), p-t = ^{'}(q^{T})$
+
+------------------
+
+**c) Which if the three output is largest?**
+
+- $p > p -\frac{W_N}{W_N+W_T}t > p-t$
+
+- $c^{'}(q) > 0, c^{''}(q) > 0$
+
+- $q^{N} > q > q^{T}$

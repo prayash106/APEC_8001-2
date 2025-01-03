@@ -1,0 +1,113 @@
+---
+title: "Recitation 1"
+author: "APEC 8002"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8001 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## Logistics {.smaller}
+
+**Office Hours**
+
+-   Thursday 2:00-3:00pm, Waite library (Office:332M)
+-   Zoom - By appointment (patha106\@umn.edu)
+
+**Assignments**
+
+-   4 assignments worth 40% of your grade
+
+-   Be careful of penalty for late submission
+
+**Exams**
+
+-   2 exams
+
+**Mathematica**
+
+-   CFANS students: [download instructions](https://studentsoftware.cfans.umn.edu/Mathematica.aspx)
+
+------------------------------------------------------------------------
+
+## Notation
+
+![](pic1.png){widtht="10%"}
+
+------------------------------------------------------------------------
+
+## Input Set
+
+![](pic2.png){width=400 height=400}
+- All combinations of inputs capable of producing a combination of output (IRS)
+
+- Isoquant: All combinations of the least amount of inputs required to produce a combination of output.
+
+------------------------------------------------------------------------
+
+## Output Set
+
+![](pic3.png){width=400 height=400}
+- All combinations of outputs that can be produced from a given combination of inputs (FOS).
+
+- Production Possibility Frontier: All combinations of the most possible output obtainable from an input combination. 
+
+------------------------------------------------------------------------
+
+## Input-Output Set
+
+![](pic4.png){width=400 height=400}
+
+- Technology: all feasible combination of outputs and inputs (PPS)
+
+------------------------------------------------------------------------
+
+## Free Disposability Assumption
+
+-   The free disposal assumption can be broken down by weak and strong free disposal for inputs and outputs:
+
+
+-   WFDI: If $x \in \text{V}(y)$ and $\theta >  1$, then $\theta x \in \text{V}(y)$.
+
+-   SFDI: If $x \in \text{V}(y)$ and $x' \geq x$, then $x' \in \text{V}(y)$.
+
+-   WFDO: If $y \in \text{Y}(x)$ and $0 < \theta \leq 1$, then $\theta y \in \text{Y}(x)$.
+
+-   SFDO: If $y \in \text{Y}(x)$ and $y' \leq y$, then $y' \in \text{Y}(x)$.
+
+------------------------------------------------------------------------
+
+## Exercise 1
+
+![](pic6.png){widtht="10%"}
+
+**1. Show that this technology satisfies weak free disposal of inputs and outputs.**
+
+-   Weak free disposability of inputs: For $\lambda > 1$
+
+-   Weak free disposability of outputs: For $0 < \lambda  \leq 1$
+
+------------------------------------------------------------------------
+
+## Returns to Scale
+
+-   Non-Increasing Returns to Scale (NIRS): if any feasible production vector can be scaled down: if $y \in \text{Y}(x)$, then $\alpha y \in \text{Y}(x)$ for all $\alpha \in [0, 1]$.
+
+-   Non-Decreasing Returns to Scale (NDRS)" if any feasible production vector can be scaled up: if $y \in \text{Y}(x)$, then $\epsilon y \in \text{Y}(x)$ for all $\epsilon \geq 1$.
+
+-   Constant Returns to Scale (CRS): if any feasible production vector can be scaled up and down: if $y \in \text{Y}(x)$, then $\tau y \in \text{Y}(x)$ for all $\tau \geq 0$.
+
+------------------------------------------------------------------------
+
+## Exercise 2
+
+![pic6](pic6.png){widtht="10%"}
+
+**2. What condition on α,β, and p result in constant returns to scale technology?**

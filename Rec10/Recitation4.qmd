@@ -1,0 +1,176 @@
+---
+title: "Recitation 4"
+author: "APEC 8002"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8002 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## Module I
+
+**Input Set**
+
+- All combinations of inputs capable of producing a combination of output (IRS).
+
+**Output Set**
+
+- All combinations of outputs that can be produced from a given combination of inputs (FOS).
+
+**Input-Output Set**
+
+- All feasible combination of outputs and inputs (PPS).
+
+-------------
+
+## Free Disposability Assumption
+
+-   The free disposal assumption can be broken down by weak and strong free disposal for inputs and outputs:
+
+
+-   WFDI: If $x \in \text{V}(y)$ and $\theta >  1$, then $\theta x \in \text{V}(y)$.
+
+-   SFDI: If $x \in \text{V}(y)$ and $x' \geq x$, then $x' \in \text{V}(y)$.
+
+-   WFDO: If $y \in \text{Y}(x)$ and $0 < \theta \leq 1$, then $\theta y \in \text{Y}(x)$.
+
+-   SFDO: If $y \in \text{Y}(x)$ and $y' \leq y$, then $y' \in \text{Y}(x)$.
+
+------------------------------------------------------------------------
+
+## Returns to Scale
+
+-   Non-Increasing Returns to Scale (NIRS): if any feasible production vector can be scaled down: if $y \in \text{Y}(x)$, then $\alpha y \in \text{Y}(x)$ for all $\alpha \in [0, 1]$.
+
+-   Non-Decreasing Returns to Scale (NDRS)" if any feasible production vector can be scaled up: if $y \in \text{Y}(x)$, then $\epsilon y \in \text{Y}(x)$ for all $\epsilon \geq 1$.
+
+-   Constant Returns to Scale (CRS): if any feasible production vector can be scaled up and down: if $y \in \text{Y}(x)$, then $\tau y \in \text{Y}(x)$ for all $\tau \geq 0$.
+
+------------------------------------------------------------------------
+
+## Different forms of technology:
+
+- $$\text{T} = \left\{ (x, y) \in \mathbb{R}^2 \times \mathbb{R}^2 : 5x_{1}^{1/3} + z_{2}^{1/3} \geq \left( y_{1}^{1/2} + y_{2}^{1/2} \right)^\rho \right\}$$
+
+- $$\text{T} = \left\{ (x, y) \in \mathbb{R}_+^2 \times \mathbb{R}^2 : x_1^a x_2^b \leq (y_1^2 + y_2^2)/2 \right\}$$
+
+- $$\text{T} = \left\{ (x, y) \in \mathbb{R}_+ \times \mathbb{R}^2 : w \geq y_1^a y_2^b \right\}$$
+
+- $$T = \left\{ (\mathbf{x}, \mathbf{y}) \in \mathbb{R}_+^N \times \mathbb{R}_+^M : x_1x_2 \geq \prod_{m=1}^{M} y_m^{\alpha_m} \right\}$$
+
+- $$T = \left\{ (\mathbf{x}, \mathbf{y}) \in \mathbb{R}_+^N \times \mathbb{R}_+^M : \prod_{n=1}^{N} x_n \geq \prod_{m=1}^{M} y_m^{\alpha_m} \right\}$$
+
+- $$T = \left\{ (\mathbf{x}, \mathbf{y}) \in \mathbb{R}_+^N \times \mathbb{R}_+^M : (\sum_{n=1}^{N} x_n)^{1/\rho} \geq \prod_{m=1}^{M} y_m^{\alpha_m} \right\}$$
+
+------------------------------------------------------------------------
+
+**Marginal Rate of Technical Substitution (MRTS)**
+
+- $$ \text{MRTS} = \left| \frac{dx_l}{dx_k} \right| = \frac{\frac{\partial D_{I}(\mathbf{x}, \mathbf{y})}{\partial x_k}}{\frac{\partial D_{I}(\mathbf{x}, \mathbf{y})}{\partial x_l}}$$
+
+**Marginal Rate of Transformation (MRT)**
+
+- $$\text{MRT} = \left| \frac{dy_l}{dy_k} \right| = \frac{\frac{\partial D_{O}(\mathbf{x}, \mathbf{y})}{\partial y_k}}{\frac{\partial D_{O}(\mathbf{x}, \mathbf{y})}{\partial y_l}}
+    $$
+    
+------------------------------------
+
+## Cost function
+
+- Given input prices, yields the cheapest way to produce a given output bundle
+
+- $$c(\mathbf{w}, \mathbf{y}) = \min_{\mathbf{x}} \{ \mathbf{w} \cdot \mathbf{x} : \mathbf{x} \in V(\mathbf{y}) \}$$
+
+- Given free disposability of inputs, the cost function can also be represented by
+
+- $$c(\mathbf{w}, \mathbf{y}) = \min_{\mathbf{x}} \{ \mathbf{w} \cdot \mathbf{x} : {D^{\to}(\mathbf{I})} (\mathbf{x}, \mathbf{y}; g) \geq 0 \}$$
+
+- Solution to the cost minimization problem gives us : the conditional input $x(w,y)$
+
+----------------
+
+**Properties:**
+
+- $C(\mathbf{w}, \mathbf{y})$ is HOD:1 in w, $x(w,y)$ is HOD:0 in w.
+
+- $x(w,y)$ is non-increasing in its own price: $(\mathbf{w}_a - \mathbf{w}_b) \cdot (\mathbf{x}(\mathbf{w}_a, \mathbf{y}) - \mathbf{x}(\mathbf{w}_b, \mathbf{y})) \leq 0$
+
+- $C(\mathbf{w}, \mathbf{y})$ is concave in w
+
+- Shephard's lemma: $$\frac{\partial C(\mathbf{w}, \mathbf{y})}{\partial w_n} = x_n(\mathbf{w,y})$$
+
+-----------------
+
+## Revenue function
+
+- Given output prices, maximum possible revenue from a given input bundle
+
+- $$R (\mathbf{p}, \mathbf{x}) = \max_{\mathbf{y}} \{ \mathbf{p} \cdot \mathbf{y} : \mathbf{y} \in Y(\mathbf{x}) \}$$
+
+- Given free disposability of outputs, the revenue function can also be represented by
+
+- $$R(\mathbf{p}, \mathbf{x}) = \max_{\mathbf{y}} \{ \mathbf{p} \cdot \mathbf{y} : {D^{\to}(\mathbf{0})} (\mathbf{x}, \mathbf{y}; g) \geq 0 \}$$
+
+- Solution to the revenue maximization problem gives us : the conditional supply $y(p,x)$
+
+----------------
+
+**Properties:**
+
+- $R(\mathbf{p}, \mathbf{x})$ is HOD:1 in p, $y(p,x)$ is HOD:0 in p.
+
+- $y(p,x)$ is non-decreasing in its own price: $(\mathbf{p}_a - \mathbf{p}_b) \cdot (\mathbf{y}(\mathbf{p}_a, \mathbf{x}) - \mathbf{y}(\mathbf{p}_b, \mathbf{x})) \geq 0$
+
+- $R(\mathbf{p}, \mathbf{x})$ is convex in p
+
+- Shephard's lemma / Samuelson McFadden Lemma: $$\frac{\partial R(\mathbf{p}, \mathbf{x})}{\partial p_m} = y_m(\mathbf{p,x})$$
+
+-----------------
+
+::: {style="font-size: 70%;"}
+## Profit function
+
+- You can solve a profit maximization problem through any of the following:
+
+- $$\max_{\mathbf{x} \geq 0, \mathbf{y} \geq 0} \pi = \mathbf{p} \cdot \mathbf{y} - \mathbf{w} \cdot \mathbf{x} \quad \text{subject to} \quad (\mathbf{x}, \mathbf{y}) \in T$$
+
+- $$\max_{\mathbf{x} \geq 0, \mathbf{y} \geq 0} \pi = \mathbf{p} \cdot \mathbf{y} - \mathbf{w} \cdot \mathbf{x} \quad \text{subject to} \quad D_I(\mathbf{x}, \mathbf{y}) \geq 1$$
+
+- $$\max_{\mathbf{x} \geq 0, \mathbf{y} \geq 0} \pi = \mathbf{p} \cdot \mathbf{y} - \mathbf{w} \cdot \mathbf{x} \quad \text{subject to} \quad D_O(\mathbf{x}, \mathbf{y}) \leq 1$$
+
+- $$\max_{\mathbf{x} \geq 0} R(\mathbf{p}, \mathbf{x}) - \mathbf{w} \cdot \mathbf{x}$$
+
+- $$\max_{\mathbf{y} \geq 0} \mathbf{p} \cdot \mathbf{y} - C(\mathbf{w}, \mathbf{y})$$
+
+- Solution to the profit maximization problem gives us : the unconditional input $x(p,w)$ and supply  $y(p,w)$
+
+:::
+::: footer
+:::
+
+------------------------
+
+**Properties:**
+
+- $\pi (\mathbf{p}, \mathbf{w})$ is HOD:1 in p.
+
+- Non-increasing in input prices, Non-decreasing in output prices
+
+- $\pi (\mathbf{p}, \mathbf{w})$ is convex in (p,w).
+
+- Hotelligs lemma: $$\frac{\partial \pi(\mathbf{p}, \mathbf{w})}{\partial p_m} = y_m(\mathbf{p}, \mathbf{w}) \quad \text{and} \quad \frac{\partial \pi(\mathbf{p}, \mathbf{w})}{\partial w_n} = x_n(\mathbf{p}, \mathbf{w})$$
+
+--------------------
+
+
+![](pic1.png){width=900 height=600}
+
+::: footer
+:::

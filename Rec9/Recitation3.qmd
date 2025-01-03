@@ -1,0 +1,165 @@
+---
+title: "Recitation 3"
+author: "APEC 8002"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8002 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## Cost function
+
+- Given input prices, yields the cheapest way to produce a given output bundle
+
+- $$c(\mathbf{w}, \mathbf{y}) = \min_{\mathbf{x}} \{ \mathbf{w} \cdot \mathbf{x} : \mathbf{x} \in V(\mathbf{y}) \}$$
+
+- Given free disposability of inputs, the cost function can also be represented by
+
+- $$c(\mathbf{w}, \mathbf{y}) = \min_{\mathbf{x}} \{ \mathbf{w} \cdot \mathbf{x} : {D^{\to}(\mathbf{I})} (\mathbf{x}, \mathbf{y}; g) \geq 0 \}$$
+
+- Solution to the cost minimization problem gives us : the conditional input $x(w,y)$
+
+----------------
+
+**Properties:**
+
+- $C(\mathbf{w}, \mathbf{y})$ is HOD:1 in w, $x(w,y)$ is HOD:0 in w.
+
+- $x(w,y)$ is non-increasing in its own price: $(\mathbf{w}_a - \mathbf{w}_b) \cdot (\mathbf{x}(\mathbf{w}_a, \mathbf{y}) - \mathbf{x}(\mathbf{w}_b, \mathbf{y})) \leq 0$
+
+- $C(\mathbf{w}, \mathbf{y})$ is concave in w
+
+- Shephard's lemma: $$\frac{\partial C(\mathbf{w}, \mathbf{y})}{\partial w_n} = x_n(\mathbf{w,y})$$
+
+-----------------
+
+## Revenue function
+
+- Given output prices, maximum possible revenue from a given input bundle
+
+- $$R (\mathbf{p}, \mathbf{x}) = \max_{\mathbf{y}} \{ \mathbf{p} \cdot \mathbf{y} : \mathbf{y} \in Y(\mathbf{x}) \}$$
+
+- Given free disposability of outputs, the revenue function can also be represented by
+
+- $$R(\mathbf{p}, \mathbf{x}) = \max_{\mathbf{y}} \{ \mathbf{p} \cdot \mathbf{y} : {D^{\to}(\mathbf{0})} (\mathbf{x}, \mathbf{y}; g) \geq 0 \}$$
+
+- Solution to the revenue maximization problem gives us : the conditional supply $y(p,x)$
+
+----------------
+
+**Properties:**
+
+- $R(\mathbf{p}, \mathbf{x})$ is HOD:1 in p, $y(p,x)$ is HOD:0 in p.
+
+- $y(p,x)$ is non-decreasing in its own price: $(\mathbf{p}_a - \mathbf{p}_b) \cdot (\mathbf{y}(\mathbf{p}_a, \mathbf{x}) - \mathbf{y}(\mathbf{p}_b, \mathbf{x})) \geq 0$
+
+- $R(\mathbf{p}, \mathbf{x})$ is convex in p
+
+- Shephard's lemma / Samuelson McFadden Lemma: $$\frac{\partial R(\mathbf{p}, \mathbf{x})}{\partial p_m} = y_m(\mathbf{p,x})$$
+
+-----------------
+
+::: {style="font-size: 70%;"}
+## Profit function
+
+- You can solve a profit maximization problem through any of the following:
+
+- $$\max_{\mathbf{x} \geq 0, \mathbf{y} \geq 0} \pi = \mathbf{p} \cdot \mathbf{y} - \mathbf{w} \cdot \mathbf{x} \quad \text{subject to} \quad (\mathbf{x}, \mathbf{y}) \in T$$
+
+- $$\max_{\mathbf{x} \geq 0, \mathbf{y} \geq 0} \pi = \mathbf{p} \cdot \mathbf{y} - \mathbf{w} \cdot \mathbf{x} \quad \text{subject to} \quad D_I(\mathbf{x}, \mathbf{y}) \geq 1$$
+
+- $$\max_{\mathbf{x} \geq 0, \mathbf{y} \geq 0} \pi = \mathbf{p} \cdot \mathbf{y} - \mathbf{w} \cdot \mathbf{x} \quad \text{subject to} \quad D_O(\mathbf{x}, \mathbf{y}) \leq 1$$
+
+- $$\max_{\mathbf{x} \geq 0} R(\mathbf{p}, \mathbf{x}) - \mathbf{w} \cdot \mathbf{x}$$
+
+- $$\max_{\mathbf{y} \geq 0} \mathbf{p} \cdot \mathbf{y} - C(\mathbf{w}, \mathbf{y})$$
+
+- Solution to the profit maximization problem gives us : the unconditional input $x(p,w)$ and supply  $y(p,w)$
+
+:::
+::: footer
+:::
+
+----------------
+
+**Duality**
+
+- $x(p,w) = x(w, y(p,w))$
+
+- $y(p,w) = y(p, x(p,w))$
+
+----------------
+
+**Properties:**
+
+- $\pi (\mathbf{p}, \mathbf{w})$ is HOD:1 in p.
+
+- Non-increasing in input prices, Non-decreasing in output prices
+
+- $\pi (\mathbf{p}, \mathbf{w})$ is convex in (p,w).
+
+- Hotelligs lemma: $$\frac{\partial \pi(\mathbf{p}, \mathbf{w})}{\partial p_m} = y_m(\mathbf{p}, \mathbf{w}) \quad \text{and} \quad \frac{\partial \pi(\mathbf{p}, \mathbf{w})}{\partial w_n} = x_n(\mathbf{p}, \mathbf{w})$$
+
+-----------------
+
+## Exercise 1
+
+Consider the production possibility set (PPS):$$
+\text{PPS} = \left\{ ( \mathbf{x}, \mathbf{y}) \in \mathbb{R}^2_+ \times \mathbb{R}^2_- : x_1^{\frac{1}{4}} x_2^{\frac{3}{4}} \geq y_1^{\frac{1}{2}} + y_2^{\frac{1}{2}} \right\}$$ 
+
+**Derive the input distance function and the marginal rate of technical substitution using this input distance function.**
+
+- According to the definition: $$D_I(x, y) = \max_{\delta} \left\{ \delta > 0 : \left( {x / \delta, y} \right) \in PPS \right\}$$
+
+- $$D_I(x, y) = \frac{x_1^{\frac{1}{4}} x_2^{\frac{3}{4}}}{y_1^{\frac{1}{2}} + y_2^{\frac{1}{2}}}$$
+
+- $$ MRTS = \frac{x_2}{3x_1}$$
+
+----------------------
+
+The cost function for this PPS is $C(w_1, w_2, y_1, y_2) = \Omega w_1^{\frac{1}{4}} w_2^{\frac{3}{4}} \left( y_1^{\frac{1}{2}} + y_2^{\frac{1}{2}} \right)$ 
+
+**Using this cost function set up the profit maximization problem and set up the first order conditions.**
+
+- Profit Max Problem:$$
+        \max \quad \pi = p_1 y_1 + p_2 y_2 - \Omega w_1^{\frac{1}{4}} w_2^{\frac{3}{4}} \left( y_1^{\frac{1}{2}} + y_2^{\frac{1}{2}} \right)$$
+        
+
+- FOC:$$
+        \frac{\partial \pi}{\partial y_1} = p_1 - \Omega w_1^{\frac{1}{4}} w_2^{\frac{3}{4}} \left( \frac{1}{4} y_1^{-\frac{3}{4}} \right) = 0$$
+        
+- $$\frac{\partial \pi}{\partial y_2} = p_2 - \Omega w_1^{\frac{1}{4}} w_2^{\frac{3}{4}} \left( \frac{1}{2} y_2^{-\frac{1}{2}} \right) = 0$$
+
+----------------------
+
+**Find the unconditional supplies using the FOC you derived in the above questions.**
+
+- Solve the FOC and get: $$
+    y_1^* = \left( \frac{2p_1}{\Omega w_1^{\frac{1}{4}} w_2^{\frac{3}{4}}} \right)^{-2} = \frac{\Omega^2 w_1^{\frac{1}{2}} w_2^{\frac{3}{2}}}{4p_1^2}$$
+    
+- $$y_2^* = \left( \frac{2p_2}{\Omega w_1^{\frac{1}{4}} w_2^{\frac{3}{4}}} \right)^{-2} = \frac{\Omega^2 w_1^{\frac{1}{2}} w_2^{\frac{3}{2}}}{4p_2^2}$$
+
+---------------------
+
+**Use the unconditional supplies from above and duality results to find the conditional demand for x_1**.
+
+- We know that:$$
+    x_1(w,y) = \frac{\partial C}{\partial w_1} = \frac{1}{4} \Omega w_1^{-\frac{3}{4}} w_2^{\frac{3}{4}} \left( y_1^{\frac{1}{2}} + y_2^{\frac{1}{2}} \right)$$
+    
+- Plug in $y(p,w)$ to get $x_1(w,p)$.
+
+-------------------
+
+**The unconditional input demand you found above will be non-increasing in its own price. Show that this result will hold any input in general for a nonempty PPS with outputs.**
+
+
+-------------------
+
+

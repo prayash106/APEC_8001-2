@@ -1,0 +1,116 @@
+---
+title: "Recitation 5"
+author: "APEC 8002"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8002 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## Module 3
+
+**Industry level profit maximization**
+
+-   Here we assume that each producer's profit maximization problem has a solution that yields supply $Y^{i}(p,w)$ and profit function $\pi^{i}(p,w)$.
+
+-   Menaing generating aggregate supply and prfit function is simply:$$
+      Y^{A}(p,w) = \sum^{I}_{i=1}y^{i}(p,w)$$
+
+-   Likewise,$$
+      \pi^{A}(p,w) = \sum^{I}_{i=1}\pi^{i}(p,w)$$
+
+------------------------------------------------------------------------
+
+## Properties of aggregrate profit and supply (how to prove it)
+
+-   $Y^{A}(p,w)$ is HOD: 0 and $\pi^{A}(p,w)$ is HOD: 1 in prices.
+
+-   $\pi^{A}(p,w)$ is convex and continous in prices.
+
+-   $Y^{A}(p,w)$ is non-decreasing in p
+
+-   Hotelling's lemma : $$ \frac{\delta\pi^{A}(p,w)}{\delta p_l} = y_{l}^{A} $$
+
+------------------------------------------------------------------------
+
+**Industry level cost minimization**
+
+-   Minimize industry-wide/aggregate cost subject to the distribution of production across firms adding to the aggregate production.
+
+- $$\begin{aligned}
+      &\min_{y_1 \geq 0, \dots, y_i \geq 0} \quad w \cdot \sum_{i=1}^I x^i \text{subject to:} \quad y^A = \sum_{i=1}^I y_i,\text{and} \quad  D_i^I(y_i, x_i) \geq 1 \quad \text{for } i = 1, \dots, I.
+    \end{aligned}$$
+
+- $$\begin{aligned}
+      &\min_{y_1 \geq 0, \dots, y_I \geq 0} \quad \sum_{i=1}^I C_i(w, y_i) \quad \text{subject to:} \quad y_A = \sum_{i=1}^I y_i.
+    \end{aligned}$$
+
+-   Cost minimization at industry level requires the marginal cost of producing output m to be same across all producers$$
+    \frac{\delta c^{i}(w, y^i)}{\delta y^i_m} = \frac{\delta c^{j}(w, y^j)}{\delta y^j_m}$$
+    
+-----------------------
+
+## Properties of aggregrate cost fucntion (how to prove it)
+
+-   $x^{i}(w, y^{A})$ is HOD: 0 and $C^{A}(w,y^{A} )$ is HOD: 1 in w.
+
+-   $C^{A}(w,y^{A})$ is concave in w.
+
+-   Shephard's lemma
+
+-----------------------
+
+## Exercise 1 (Past prelim)
+
+Suppose a manufacturer of a proprietary animal feed ingredient has two plants (denoted by a and b) in adjacent small rural communities. Let $y_j$ be the tons of feed ingredient produced by plant j using labor $l_j$ and capital $k_j$. The cost functions for these two plants are:$$
+C_a(r, w, y_a) = r^{\frac{1}{2}} w^{\frac{1}{2}} y_a^2,\\
+C_b(r, w, y_b) = r^{\frac{1}{4}} w^{\frac{3}{4}} y_b^2$$
+where $r > 0$ and $w > 0$ are the competitive prices of capital and labor per hour.
+
+Given aggregate output $y=y_a+y_b$, **find distribution of output across plants that minimizes aggregate cost (Hint: The solution is interior).**
+
+- $y_a = \frac{yw^{1/4}}{w^{1/4} + r^{1/4}}$, $y_b = \frac{yr^{1/4}}{w^{1/4} + r^{1/4}}$
+
+--------------------------
+
+**How will this distribution of output change if the competitive price of labor (w) increases? What is the economic intuition of this result?**
+
+- As w increases, $y_a$ increases
+
+- As w increases, $y_b$ decreases
+
+- As wage increases, manufactures will produce more  from the plant that has smaller share of wage cost in cost function.
+
+----------------------
+
+Suppose the inverse aggregate demand for the feed ingredient is $y^A = 1000 - 1/2y$. **What is the monopoly aggregate profit function in terms of its aggregate output? Maximize this profit function to fid aggregate output and optimal price for feed ingredient.**
+
+--------------------
+
+**Is the optimal output you found in part c homogeneous of degree zero in competitive prices of capital and labor (r and w). Justify your answer and write the economic intuition.** 
+
+- Not HOD of degree 0.
+
+- Because this is not a perfectly competitive market, the output decision made by firms will affect the price on the market so it can't be HOD 0.
+
+-------------------------
+
+## Exercise 2 (Past final)
+
+Suppose an electronic manufacturer has two plants (denoted by $a$ and $b$) in a small rural community. Plant $a$ produces memory chips for computers, while plant $b$ produces LED screens for computer monitors. Plant $j$ (for $j = a, b$) uses labor and capital, $L_j$ and $K_j$, to produce $y^j$, which it can sell for the competitive price $p^j$. Capital can be obtained for the competitive price $r$ per machine hour.
+Being the only major employer in a small town, the business faces the inverse labor supply with the wage rate of $w(L)$ per hour, where aggregate labor $L = L_a + L_b$ and $w'(L) > 0$. The manufacturer’s net revenue functions for each plant conditional on labor are:
+$R_a(p_a, r, L_a) = \Omega_a r^{-\frac{2}{3}} p_a^{\frac{5}{3}} L_a^{\frac{1}{2}}$
+$R_b(p_b, r, L_b) = \Omega_b r^{-\frac{3}{2}} p_b^{\frac{5}{2}} L_b^{\frac{1}{2}}$
+
+1) Given aggregate labor $L$, find the distribution of labor across plants that maximizes aggregate revenue (The solution is interior).
+
+2) Suppose the inverse labor supply is $w(L) = \frac{1}{2}L$. What is the business’s aggregate profit in terms of its aggregate labor? Maximize this aggregate profit function to find the optimal aggregate labor and the optimal wage.
+
+

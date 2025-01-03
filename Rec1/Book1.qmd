@@ -1,0 +1,156 @@
+---
+title: "Recitation 1"
+author: "APEC 8001"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8001 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+---
+
+## TA Introduction
+
+-   Prayash Pathak
+
+-   Second Year PhD in APEC
+
+------------------------------------------------------------------------
+
+## Logistics {.smaller}
+
+**Office Hours**
+
+-   Thursday 2:00-3:00pm, Waite library (Office:332M)
+-   Zoom - By appointment (patha106\@umn.edu)
+
+**Assignments**
+
+-   6 assignments worth 50% of your grade
+
+-   Submit in Canvas
+
+**You can work in groups, but are required to submit your own assignments**
+
+**Typed assignments are preferred:**
+
+-   Overleaf/LaTeX
+-   R markdown
+-   Mathpix
+
+------------------------------------------------------------------------
+
+## General Advice
+
+-   Supporting text: [Nolan H. Miller note](https://nmiller.web.illinois.edu/notes.html#using)
+-   Keep up with content
+-   Math review
+
+------------------------------------------------------------------------
+
+## CHAPTER 1
+
+------------------------------------------------------------------------
+
+## Rational Preferences
+
+MWG states the following definition of rational preferences:
+
+The preference relation $\succsim$ is rational if it has the following two properties:
+
+1.  **Completeness:** For all $x, y ∈ X$, either $x \succsim y$ or $y \succsim x$ (or both)
+
+2.  **Transitivity:** For all $x, y, z ∈ X$, if x $\succsim$ y and y $\succsim$ z, then x $\succsim$ z.
+
+::: notes
+-   unique pairs that are not redundant nor contradictory
+-   Condorcet voting paradox
+-   preferences to utility / ordinal
+:::
+
+------------------------------------------------------------------------
+
+## Exercise 1 {.scrollable}
+
+**Prove Part(iii) of Prop 1.B.1: if** $x \succ y \succsim z$, then $x \succ z$.[^1]
+
+[^1]: Question taken from Matt Braska Slide
+
+-   Use the definition of strict preference relation $\succ$
+
+-   Part 1: We have $x \succ y$ $\Rightarrow$ $x \succsim y$ but not $y \succsim x$.
+
+-   Following the given statement, we can say by transitivity $x \succsim z$.
+
+-   Part 2: Proof by contradiction,
+
+-   Suppose $z \succsim x$
+
+-   Since $y \succsim z$, using transitivity $y \succsim x$
+
+-   But, this contradicts $x \succ y$
+
+-   Thus we cannot have $z \succsim x$
+
+-   **which proves,** $x \succ z$.
+
+------------------------------------------------------------------------
+
+## WARP
+
+-   The choice structure (ℬ, C(⋅)) satisfies WARP if for some B ∈ ℬ with x, y ∈ B, we have x ∈ C(B). Then for any B′ ∈ ℬ with x, y ∈ B′ and y ∈ C(B′), we must also have x ∈ C(B′).
+
+-   In simple words, if x is choosen when both x and y are available, then there is no alternative set containing both where y is choosen but x is not.
+
+------------------------------------------------------------------------
+
+## Exercise 2
+
+::: {style="font-size: 93%;"}
+Given the choice set $X = {x, y, z}$ and the choice structure ($\mathcal{B}$, C()), where $\mathcal{B}$ = { {x, y}, {y, z}, {x, z}, {x, y, z} } , C({x, y}) = {x} , C({y, z}) = {z} , C({x, z}) = {x, z} , and C({x, y, z}) = {x, z} :[^2]
+
+**a. Demonstrate this choice structure satisfies the weak axiom of revealed preferences (WARP)**
+
+Let us consider each choice rule above:
+
+-   C({x, y}) = {x} : Any choice rule over a different budget set containing both x and y must include x.
+
+-   C({y, z}) = {z} : Any choice rule over a different budget set containing both y and z must include z.
+
+-   C({x, z}) = {x, z} : Any choice rule over a different budget set containing both x and z must include both x and z .
+
+-   C({x, y, z}) = {x, z}: Any choice rule over a different budget set containing x, y, z must include both x and z. Also, any choice rule over a different budget set containing both x and y must include x , any choice rule over a different budget set containing both y and z must include z , and any choice rule over a different budget set containing both x and z must include both x and z.
+
+-   All the choice rules in this choice structure are consistent, and thus **WARP is satisfied**.
+:::
+
+[^2]: Question taken from Monique D. Davis Slide
+
+::: footer
+:::
+
+------------------------------------------------------------------------
+
+**b. Suppose instead C({x, y, z}) = {x}. Does this choice structure satisfy WARP? Provide an explanation for your answer.**
+
+**Answer:**
+
+Again, let us consider each choice rule in this choice structure:
+
+-   C({x, y}) = {x}: Any choice rule over a different budget set containing both x and y must include x (if it includes y).
+
+-   C({y, z}) = {z} : Any choice rule over a different budget set containing both y and z must include z (if it includes y ).
+
+-   C({x, z}) = {x, z}: Any choice rule over a different budget set containing both x and z must include both x and z.
+
+-   C({x, y, z}) = {x}: Any choice rule over a different budget set containing x, y, z must include x (if it includes y or z). Also, any choice rule over a different budget set containing both x and y must include x (if it includes y), and any choice rule over a different budget set containing both x and z must include both x (if it contains z).
+
+-   Because C({x, y, z}) only contains x, when C({x, z}) contains both x and z, **WARP is violated**.
+
+------------------------------------------------------------------------
+
+## Questions ????

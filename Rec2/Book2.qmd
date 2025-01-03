@@ -1,0 +1,181 @@
+---
+title: "Recitation 2"
+author: "APEC 8001"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8001 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## ![Exercise 1](pic1.png){widtht=10%}
+
+-   Define choice structure and choice rule:
+
+-   A choice structure is a feasible choice set $\mathbf{B}$ and choice rule $C(\cdot)$ for that set.
+
+-   A rule $C(\cdot)$ is a choice rule if for all $b \in \mathbf{B}, C(b) \subseteq b$ and $C(b) \neq \varnothing$.
+
+-   Is the rule defined for all b?
+
+-   $C(\cdot)$ is **not a valid choice structure**.
+
+::: footer
+:::
+------------------------------------------------------------------------
+
+## Part 2 and 3
+
+-   Does it satisfy WARP?: **No**
+
+-   For $x,y \in (x,y)$, $C(x,y) = x \implies x \succ* y$
+
+-   For $x,z \in (x,z)$, $C(x,z) = x,z \implies x \sim* z$
+
+-   For $x,y \in (x,y,z)$, $C(x,y,z) = y \implies y \succ* x$, and for $y,z \in (x,y,z)$, $C(x,y,z) = y \implies y \succ* z$
+
+-   Now test for both completeness and transitivity.
+
+------------------------------------------------------------------------
+
+## Preference and utility: Desirability assumptions
+
+**Monotonicity**
+
+-   The preference relation $\succsim$ on X is monotone if for $x,y \in X$, $y >> x$ implies $y \succ x$.
+
+    -   If there is a commodity bundle y that contains greater amounts of all commodities than the commodity bundle x, then the consumer strictly prefers y to x.
+
+    -   Intuition: preferences are non-decreasing
+
+-   The preference relation $\succsim$ on X is strongly monotone if $y \geq x$ and $y \neq x$ implies $y \succ x$.
+
+    -   Strongly monotone assumption assumes only that y has greater amounts of at least one commodity (and never a lesser amount of any commodity) relative to x.
+
+    -   Intuition: preferences are strictly increasing
+
+------------------------------------------------------------------------
+
+## Exercise 1
+
+**Check for monotonicity and strong monotonicity**
+
+$u(x_1, x_2) = min{(x_1, x_2)}$
+
+-   $min{(x_1 + \delta, x_2 + \delta)} > min{(x_1, x_2)}, \forall \delta >0$
+
+-   $min{(x_1 + \delta, x_2)} \ngtr min{(x_1, x_2)}$ if $min{(x_1, x_2)} = x_2$
+
+$u(x_1, x_2) = x_1 + x_2$
+
+-   ($x_1$ + $\delta$) + $x_2$ + $\delta$ \> $x_1$ + $x_2$
+
+-   ($x_1$ + $\delta$)+ $x_2$ \> $x_1$ + $x_2$
+
+-   Strongly monotone $\implies$ Monotone
+
+------------------------------------------------------------------------
+
+## Exercise 2
+
+::: {style="font-size: 93%;"}
+Consider a $\succsim$ defined by $\mathbf{z}^{\prime}\succsim\mathbf{z}^{\prime \prime}$ iif $min(z_1^{\prime},z_2^{\prime}) \geq min (z_1^{\prime \prime},z_2^{\prime \prime})$. Prove that this preference relation is **monotone**.
+
+-   Definition of monotonicity: A preference relation $\succsim$ on $\mathbb{R}_{+}^2$ is monotone if for all $\mathbf{x}, \mathbf{y} \in$ $\mathfrak{R}^2$, if $y>>x\left(y_l>x_l\right.$ for $\left.l=1,2\right)$, then $y \succ x$.
+
+-   Assume two bundles $z^{\prime}, z^{\prime \prime} \in$ $\mathbb{R}_{+}^2$ such that $\mathbf{z}^{\prime}>>\mathbf{z}^{\prime \prime}$.
+
+-   To prove monotonicity, we need $\mathbf{z}^{\prime}\succ\mathbf{z}^{\prime \prime}$
+
+-   Let $z_{\text {min }}{ }^{\prime}=\min \left\{z_1^{\prime}, z_2{ }^{\prime}\right\}$ and $z_{\text {min }}{ }^{\prime \prime}=\min \left\{z_1{ }^{\prime \prime}, z_2{ }^{\prime \prime}\right\}$
+
+-   $z_{\text {min }}{ }^{\prime}>z_{\text {min }}{ }^{\prime \prime}$???
+
+-   $z^{\prime}>>z^{\prime \prime}$ $\implies$ $z_1{ }^{\prime}>z_1{ }^{\prime \prime}$ and $z_2{ }^{\prime}>z_2{ }^{\prime\prime}$
+
+-   $z_{\text {min }}{ }^{\prime \prime}=\min \left\{z_1{ }^{\prime \prime}, z_2{ }^{\prime \prime}\right\}$ $\implies$ $z_1{ }^{\prime \prime} \geq z_{\text {min }}{ }^{\prime \prime}$ and $z_2{ }^{\prime \prime} \geq z_{\text {min }}{ }^{\prime \prime}$
+
+-   transitivity implies $z_1{ }^{\prime}>z_{\text {min }}{ }^{\prime \prime}$ and $z_2{ }^{\prime}>$ $z_{\text {min }}{ }^{\prime \prime}$.
+:::
+
+------------------------------------------------------------------------
+
+## Preference and utility: Desirability assumptions
+
+**LNS**
+
+-   The preference relation on X is locally non-satiated if, for every $x \in X$ and every $ε > 0$, there is $y \in X$ such that $|| y – x || ≤ ε$ and $y \succ x$.
+
+    -   For any point x one can define a set of points very close to it (within the distance ε) and within that set (“in the neighborhood of x”) there is a point y that is strictly preferred to x.
+
+    -   Intuition: there are no thick indifference curves
+
+-   Strongly monotone $\implies$ Monotone $\implies$ LNS
+
+------------------------------------------------------------------------
+
+## Indifference sets
+
+-   The indifference set for the commodity bundle x is the set of all commodity bundles for which the consumer is indifferent when comparing them to x.
+
+-   The upper contour set for the commodity bundle x is the set of all commodity bundles that are “at least as good as” x.
+
+-   The lower contour set for the commodity bundle x is the set of all commodity bundles that x is “at least as good as”.
+
+------------------------------------------------------------------------
+
+## Preference and utility: Convexity
+
+-   The preference relation on X is convex if for every $x \in X$, the upper contour set ${y \in X: y \succsim x}$ is convex i.e. if $y \succsim x$ and $z \succsim x$ together imply that $\forall \alpha \in (0,1)$, $\alpha y + (1-\alpha)z \succsim x$.
+
+- A preference relation satisfies convexity if for all $x,y \in X$, $x \succsim y \implies ax +(1-a)y \succsim y \forall a\in (0,1)$.
+
+-   The preference relation on X is strictly convex if for every $x \in X$, we have that $y \succsim x$, $z \succsim x$, and $y ≠ z$ implies that $αy + (1 - α)z \succ x$ for any $\forallα   (0, 1)$.
+
+-   Intuition for convexity:
+
+-   consumers prefer variety
+
+-   diminishing marginal rates of substitution between different goods
+
+------------------------------------------------------------------------
+
+## Homothetic and quasilinear preferences
+
+-   A monotone preference relation $\succsim$ on X is homothetic if all indifference sets are related by proportional expansion along rays from the origin i.e.if $x \sim y$ then $ax \sim ay$ for any $a \geq 0$
+
+    -   for any ray drawn from the origin the slopes of all indifference sets at the points crossed by that ray are equal
+
+    -   Intuition: with increase in w, given that prices remain unchanged the consumer increases the purchase of all goods by the same proportion that w increases
+
+-   A preference relation $\succsim$ on X is quasilinear with respect to commodity 1 if: all indifference sets are parallel displacements of each other along the axis of commodity 1 and good 1 is desirable.
+
+    -   Intuition: parallel indifference curves
+
+------------------------------------------------------------------------
+
+## Hint for question 9 
+
+- Definition of strong monotonicity,
+
+- Proof by contradiction: there is some $x^\prime \in x(p,w)$ where $w \neq p.x^\prime$,
+
+- This gives you two cases to examine, either $p.x^\prime > w$ or $w >p.x^\prime$,
+
+- Examine these cases,
+
+- if $w >p.x^\prime$ there is some $y \geq x$ and $y \neq x$ such that $w \geq p.y >p.x^\prime$,
+
+-  Follow this with the definition of strong monotonicity for y and its implication in terms of utility function,
+
+- Use the definition of demand for $x^\prime$ to contradict the previous statement.
+
+------------------------------------------------------------------------
+
+## Questions ????

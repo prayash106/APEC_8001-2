@@ -1,0 +1,232 @@
+---
+title: "Recitation 5"
+author: "APEC 8001"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8001 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+::: {style="font-size: 80%;"}
+**Consider two people, A and B, with two different Bernoulli utility functions:**$$
+   u_A(x) = x^{1/4}\\
+   u_B(x) = \log(x)$$ 
+Calculate the coefficient of absolute risk aversion and the coefficient of relative risk aversion for both persons. Is one of these two people more risk averse than the other? Does it depend on the value of $x$? 
+
+- For person A, $u'(x) = \frac{1}{4}x^{-3/4}$ and $u''(x) = -\frac{3}{16}x^{-7/4}$, so:$$
+    \text{Coefficient of absolute risk aversion for person A} = - \frac{u''(x)}{u'(x)} = \frac{3}{4}x^{-1}$$
+    $$
+    \text{Coefficient of relative risk aversion for person A} = - x\frac{u''(x)}{u'(x)} = \frac{3}{4}$$
+
+- For person B, $u'(x) = x^{-1}$ and $u''(x) = -x^{-2}$, so:$$
+    \text{Coefficient of absolute risk aversion for person B} = - \frac{u''(x)}{u'(x)} = x^{-1}$$
+    $$
+    \text{Coefficient of relative risk aversion for person B} = - x\frac{u''(x)}{u'(x)} = 1$$
+    
+- Thus, **person B is more risk averse than person A**, for all values of $x$ and for both coefficients of risk aversion.
+:::
+::: footer
+:::
+
+---------------------------
+
+::: {style="font-size: 90%;"}
+**Now consider the person has following Bernoulli utility function:** $u(x) = x^{1/2}$. Suppose the person faces the following distribution for $x$:$$
+    f(x) = \frac{1}{100} \quad \text{for} \quad 0 \leq x \leq 100\\
+    = 0 \quad \text{for} \quad x > 100$$
+    
+**Calculate this person's expected utility.**
+
+- $$\int u(x)f(x)dx = \int x^{1/2}\left(\frac{1}{100}\right)dx = \frac{1}{100}\int x^{1/2}dx$$
+
+- The antiderivative is $\frac{2}{3}x^{3/2}$. Evaluate this over the bounds from 0 to 100:$$
+    \frac{1}{100}\left(\frac{2}{3}\right)\left[100^{3/2} - 0^{3/2}\right]\\
+    = \frac{2}{300}\times 1000
+    = \frac{2000}{300} = \frac{20}{3}$$
+:::   
+
+-----------
+
+::: {style="font-size: 90%;"}
+**Based on your answer to part b), what is the certainty equivalent** for this person for this distribution $f(x)$? What does your answer imply about the risk aversion of this person?
+
+- The certainty equivalent (ce) is the amount of money that gives this consumer the same expected utility that he or she gets for the above distribution of $f(x)$. 
+
+- $(ce)^{1/2} = \frac{20}{3}$
+
+- $ce = \frac{400}{9} \approx 44.44$
+
+- The expected value of $x$ for this distribution is 50. Since this person is risk averse, the certainty equivalent is less than the expected value of $x$.
+:::
+
+-----------
+
+::: {style="font-size: 90%;"}
+**Finally, consider the same person as in parts b) and c), but consider how to calculate the probability premium for the following "gamble".** The person can have $x = 50$ for certain, or can choose a gamble which gives this person 100 with probability $0.5 + \pi$ or 0 with probability $0.5 - \pi$. The $\pi$ is the probability premium, and it depends on this person's utility function, as given above, and on $x$ and $\epsilon$, where here both $x$ and $\epsilon$ are equal to 50. What is the probability premium for this person for this gamble?
+
+- The value of $\pi$ must satisfy the following equation:
+
+- $u(50) = \left(\frac{1}{2} + \pi\right)u(100) + \left(\frac{1}{2} - \pi\right)u(0)$
+
+- $50^{1/2} = \left(\frac{1}{2} + \pi\right)100^{1/2} + \left(\frac{1}{2} - \pi\right)0^{1/2}$
+
+- $(25^{1/2})(2^{1/2}) = \left(\frac{1}{2} + \pi\right)10$
+
+- $5\sqrt{2} = 5 + 10\pi$
+
+- $\frac{5(\sqrt{2} - 1)}{10} = \pi$
+
+- $\pi = \frac{\sqrt{2} - 1}{2} \approx 0.207$
+:::
+
+-----------
+
+::: {style="font-size: 90%;"}
+**Consider a consumer whose behavior is consistent with the expected utility framework.** The consumer has the following Bernoulli utility function: $u(x) = x^{1/2}$. Suppose the consumer faces the following risky “lottery”:
+    $$\begin{align*}
+      $64 & \text{with probability} 0.25\\
+      $100 & \text {with probability} 0.50\\
+      $400 & \text{with probability} 0.25\\
+    \end{align*}$$
+For this consumer, calculate the certainty equivalent of this lottery. Compare this to the expected income of this lottery.
+
+- The certainty equivalent is a guaranteed (no risk) amount of money that gives the consumer the same expected utility as the above lottery. So the first thing to do is calculate the expected utility of the lottery:$$
+   EU = 0.25 \times 64^{1/2} + 0.5 \times 100^{1/2} + 0.25 \times 400^{1/2}$$
+   $$
+   = 0.25 \times 8 + 0.5 \times 10 + 0.25 \times 20 = 2 + 5 + 5 = 12$$
+
+- So the same expected utility would be obtained by \$144 (since \(144^{1/2} = 12\)). Thus, the certainty equivalent is \$144. 
+:::
+
+-----------
+
+Next, consider the same consumer with the same utility function $(u(x) = x^{1/2})$. Consider a given amount of money, \$25, and another amount of money, \$24, that the first amount could either increase by or decrease by, each with a probability of 0.50. What is the **probability premium of this “lottery”**?
+
+- The probability premium is the value of \(\lambda\) for which the following holds:$$
+   u(x) = (1/2 + \lambda) \times u(x + \Delta x) + (1/2 - \lambda) \times u(x - \Delta x)$$
+   
+- Substitute the given values into the equation to solve for the probability premium.
+
+---------
+
+::: {style="font-size: 90%;"}
+Next, consider a situation where this same consumer would like to buy insurance. The probability that a “bad event” happens is 0.25, and the probability that the “bad event” does not happen is 0.75. The consumer can buy “insurance claims” for a price q. If the “bad event” happens, the insurance company pays the consumer \$1 for each insurance claim. If the “bad event” does not happen, the consumer gets nothing (the insurance claims are worth \$0). Suppose that the insurance market is very competitive so that the expected profit of insurance companies is zero. In this situation, what price will the insurance claims sell for?
+
+- Find the value of q that gives the insurance company an expected profit of zero.
+
+- For each claim sold, the insurance company pays nothing 75\% of the time and pays \$1 25\% of the time, so the expected profits per claim are:$$
+   \text{Expected profit (per claim)} = q - 1 \times 0.25 - 0 \times 0.75$$
+
+- Setting this expected profit equal to 0 gives:$$
+   0 = q - 0.25 \implies q = 0.25$$
+:::  
+
+---------
+
+::: {style="font-size: 80%;"}
+Finally, consider the consumer (with a Bernoulli utility function $(u(x) = x^{1/2})$. Assume that if the “bad event” happens and there is no insurance, the consumer has \$25. If the “bad event” does not happen, the consumer has \$100. Express the consumer’s expected utility as a function of the amount of insurance claims that they buy, denoted by n. Maximize the expected utility of the consumer with respect ton to derive the optimal number of insurance claims.
+
+- The consumer pays for insurance no matter what happens, and that the price of insurance claims is 0.25, the expected utility of the consumer who buys n insurance claims is:
+    $$\begin{align*}
+    EU &= 0.75 \times u(100 - 0.25n) + 0.25 \times u(25 - 0.25n + n)\\
+    & = 0.75 \times (100 - 0.25n)^{1/2} + 0.25 \times (25 + 0.75n)^{1/2}
+    \end{align*}$$
+    
+- Differentiate this expected utility with respect to \(n\) to find the optimal number of insurance claims:$$
+   \frac{\partial EU}{\partial n} = 0.75 \times \frac{1}{2} \times (100 - 0.25n)^{-1/2} \times (-0.25) + 0.25 \times \frac{1}{2} \times (25 + 0.75n)^{-1/2} \times 0.75 = 0$$
+   
+- Solving this equation gives $n = 75$. The consumer buys 75 insurance claims at a cost of 0.25 per claim.
+:::
+
+---------
+
+::: {style="font-size: 90%;"}
+**Does this consumer face any risk after buying the insurance?**
+
+- To see whether the consumer faces any risk after buying this insurance, calculate the income in the two state.
+
+- Income if bad event happens:$$
+   25 - 75 \times 0.25 + 75 = 100 - 18.75 = 81.25$$
+   
+- Income if bad event does not happen:$$
+   100 - 75 \times 0.25 = 100 - 18.75 = 81.25$$
+   
+- Thus, after buying the insurance, the consumer faces no risk. **They are fully insured.**
+::: 
+
+-----------------
+
+::: {style="font-size: 90%;"}   
+Consider an individual with the following utility function for $c > 0$: $u(c) = -e^{-c}.$
+**Is this individual risk averse?** More specifically, what is her coefficient of absolute risk aversion? What is her coefficient of relative risk aversion?
+
+- For this utility function we have:$$
+    u'(c) = e^{-c} \quad \text{and} \quad u''(c) = -e^{-c}$$
+    
+- This person is clearly risk-averse because $u''(c) < 0$ for all values of $c > 0$. 
+
+- The individual’s rate of absolute risk aversion is:$$
+    r_{A}(c) = -\frac{u''(c)}{u'(c)} = 1$$
+    
+- The rate of relative risk aversion is:$$
+   r_{R}(c) = -c \frac{u''(c)}{u'(c)} = c$$
+:::  
+
+-------------------
+
+::: {style="font-size: 90%;"}
+This individual wants to maximize expected utility. She has a wealth of 150 and can use that wealth to buy one of two risky assets. The price of both assets is 1. The amount of asset 1 purchased is $n_1$, and the amount of asset 2 purchased is $n_2$. So, the budget constraint is $n_1 + n_2 = 150$. There are two states of nature, which will be denoted by state 1 and state 2. Each unit of asset 1 pays out $\frac{2}{3}$ if state 1 occurs and $\frac{4}{3}$ if state 2 occurs. Each unit of asset 2 pays out $\frac{4}{3}$ if state 1 occurs and $\frac{2}{3}$ if state 2 occurs. Let the probability that state 1 occurs be given by $p_1$, and the probability that state 2 occurs be given by $p_2$, where $p_1 + p_2 = 1$. **Write out the expression for this person’s expected utility (which you can denote by $EU$)** if she purchases $n_1$ units of asset 1 and $150 - n_1$ units of asset 2.
+
+- The expected utility can be written as:$$
+   EU = p_1 \left(-e^{-{[n_1 \cdot \frac{2}{3}} + (150 - n_1) \cdot \frac{4}{3}]}\right) + p_2 \left(-e^{-[n_1 \cdot \frac{4}{3} + (150 - n_1) \cdot \frac{2}{3}]}\right)$$
+   
+- $p_1(-e^{2/3n_1-200}) +p_2(-e^{-2/3n_1-100})$
+:::   
+
+----------------
+
+::: {style="font-size: 90%;"}
+Given your answer above, solve for the level of $n_1$ that maximizes this person’s expected utility. Also, solve for the optimal level of $n_2$. 
+
+- Differentiating expected utility with respect to $n_1$ yields:$$
+    \frac{\partial EU}{\partial n_1} = -\frac{2}{3} p_1 e^{\frac{2}{3} n_1} e^{-200} + \frac{2}{3} p_2 e^{\frac{2}{3} n_1} e^{-100}$$
+   
+- Setting equal to zero and solving yields:$$
+    n_1^* = \frac{3}{4} \ln\left(\frac{p_2}{p_1}\right) + 75$$
+
+- $n_2^* = 150 - n_1 = 75 - \frac{3}{4} \ln\left(\frac{p_2}{p_1}\right)$
+:::
+
+----------------
+
+::: {style="font-size: 90%;"}
+**Given your answer to part (c), what is the utility of this individual if state 1 occurs? What is his or her utility if state 2 occurs?**
+
+- State 1 utility is:$$
+   -e^{\frac{2}{3} n_1^* - 200} = -e^{\frac{2}{3}\left(\frac{3}{4}\ln\left(\frac{p_2}{p_1}\right) + 75\right) - 200} = -e^{-\left(150 - \frac{1}{2} \ln\left(\frac{p_2}{p_1}\right)\right)}$$
+   
+- State 2 utility is:$$
+   -e^{\frac{2}{3} n_1^* - 100} = -e^{\frac{2}{3}\left(\frac{3}{4}\ln\left(\frac{p_2}{p_1}\right) + 75\right) - 100} = -e^{-\left(150 + \frac{1}{2} \ln\left(\frac{p_2}{p_1}\right)\right)}$$
+:::  
+
+--------------------
+
+::: {style="font-size: 90%;"}
+**What does the optimal value of n1 approach as p1 becomes very small?**
+
+- Recall from part (c) that $n_1^* = \frac{3}{4} \ln\left(\frac{p_2}{p_1}\right) + 75$. 
+
+- As $p_1$ gets closer to zero (which means that $p_2$ gets closer to 1), the value $\ln\left(\frac{p_2}{p_1}\right)$ will increase toward infinity. Eventually, $n_1$ will hit 150 at a corner solution.
+
+- The intuition for this result is as follows. As $p_1$ decreases, asset 1 becomes more attractive since it has a low payout when state 1 occurs and high payout when state 2 occurs, so the person puts more and more of his or her money into asset 1.
+:::
+
+------------------
+
+###Questions???????

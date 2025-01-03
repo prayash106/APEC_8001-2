@@ -1,0 +1,198 @@
+---
+title: "Recitation 2"
+author: "APEC 8002"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8002 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## Logistics {.smaller}
+
+**Assignments**
+
+-   HW1 due today at midnight
+
+-   HW2 assigned, due Nov 8
+
+**Mathematica needed for Question 4**
+
+-   CFANS students: [download instructions](https://studentsoftware.cfans.umn.edu/Mathematica.aspx)
+
+-------
+
+**Radial Input Distance Function**
+
+- $$    D_{I}(\mathbf{x}, \mathbf{y}) = \max_\delta \{\delta > 0 : (\frac{\mathbf{x}}{\delta}, \mathbf{y}) \in T\}
+    $$
+
+- When does $D_{I}(\mathbf{x}, \mathbf{y})$ describe a feasible set of inputs?
+
+- $D_{I}(\mathbf{x}, \mathbf{y})≥1$
+
+**Radial Output Distance Function**
+
+- $$    D_{O}(\mathbf{x}, \mathbf{y}) = \min_\delta \{\delta > 0 : (\mathbf{x}, \frac{\mathbf{y}}{\delta}) \in T\}
+    $$
+
+- When does $D_{O}(\mathbf{x}, \mathbf{y})$ describe a feasible set of outputs?
+
+- $D_{O}(\mathbf{x}, \mathbf{y})≤1$
+
+----------
+
+**Marginal Rate of Technical Substitution (MRTS)**
+
+- The amount by which one factor of production must increase in order to maintain the same level of production when another factor decreases assuming technically efficient production.
+
+- Totally differentiating $D_{I}(\mathbf{x}, \mathbf{y})$ with respect to $x_l$ and $x_k$:
+
+- $$\frac{\partial D_{I}(\mathbf{x}, \mathbf{y})}{\partial x_l} dx_l + \frac{\partial D_{I}(\mathbf{x}, \mathbf{y})}{\partial x_k} dx_k = 0 $$
+
+- $$ \text{MRTS} = \left| \frac{dx_l}{dx_k} \right| = \frac{\frac{\partial D_{I}(\mathbf{x}, \mathbf{y})}{\partial x_k}}{\frac{\partial D_{I}(\mathbf{x}, \mathbf{y})}{\partial x_l}}$$
+
+----------
+
+**Marginal Rate of Transformation (MRT)**
+
+- The amount by which one output must decrease, while another output increases in order to maintain efficient production with the same level of inputs.
+
+- Totally differentiating $D_{O}(\mathbf{x}, \mathbf{y}) = 1$ with respect to $y_l$ and $y_k$:
+
+- $$\frac{\partial D_{O}(\mathbf{x}, \mathbf{y})}{\partial y_l} dy_l + \frac{\partial D_{O}(\mathbf{x}, \mathbf{y})}{\partial y_k} dy_k = 0
+    $$
+    
+- $$\text{MRT} = \left| \frac{dy_l}{dy_k} \right| = \frac{\frac{\partial D_{O}(\mathbf{x}, \mathbf{y})}{\partial y_k}}{\frac{\partial D_{O}(\mathbf{x}, \mathbf{y})}{\partial y_l}}
+    $$
+
+
+------------
+
+## Exercise 1
+
+Define the technology set T:
+    $$
+    T = \{ (\mathbf{x}, \mathbf{y}) \in \mathbb{R}^2_+ \times \mathbb{R}^2_+ : x_1^{\alpha} x_2^{\beta} \geq y_1 + \sqrt{y_1 y_2} + y_2 \}
+    $$
+    
+ where $\alpha > 0$ and $\beta > 0$. This technology is nonempty, strictly convex, closed, and satisfies weak free disposal in outputs and inputs.
+
+
+- **Derive the Radial Input Distance Function for this technology**, assuming $y_1 > 0$  or $y_2 > 0$.
+    
+- **Derive the Marginal Rate of Technical Substitution** between $x_1$ and $x_2$ using this input distance function.
+
+
+--------------
+
+## Exercise 2
+
+![](pic1.png){widtht="10%"}
+
+------------------
+
+Under what conditions on $\rho, \alpha_{1}$ and $\alpha_{2}$ **does this technology satisfy constant returns to scale?**
+
+- A technology satisfies constant returns to scale if, for any $\lambda>0$, if $(\mathbf{x}, \mathbf{y}) \in T$, then $(\lambda \mathbf{x}, \lambda \mathbf{y}) \in T$.
+
+- $$
+\left[\left(\lambda x_{1}\right)^{\rho}+\left(\lambda x_{2}\right)^{\rho}+\left(\lambda x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}} \geq\left(\lambda y_{1}\right)^{\alpha_{1}}\left(\lambda y_{2}\right)^{\alpha_{2}}
+$$
+
+
+- $$
+\left\{\lambda^{\rho}\left(\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right)\right\}^{\frac{1}{\rho}} \geq \lambda^{\alpha_{1}+\alpha_{2}}\left(y_{1}\right)^{\alpha_{1}}\left(y_{2}\right)^{\alpha_{2}}
+$$
+- when $\lambda^{1-\alpha_{1}-\alpha_{2}}=1$, or when $\alpha_{1}+\alpha_{2}=1$.
+
+
+----------------
+
+Under what conditions on $\alpha_{1}$ and $\alpha_{2}$ **does this technology satisfy weak free disposal of output?**
+
+- Weak free disposal of output requires for $0<\lambda<1$, if $(\mathbf{x}, \mathbf{y}) \in T$, then $(\mathbf{x}, \lambda \mathbf{y}) \in T$
+
+- $$
+\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}} \geq y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}} \geq\left(\lambda y_{1}\right)^{\alpha_{1}}\left(\lambda y_{2}\right)^{\alpha_{2}}
+$$
+
+- $$
+y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}} \geq\left(\lambda y_{1}\right)^{\alpha_{1}}\left(\lambda y_{2}\right)^{\alpha_{2}}
+$$
+
+- $$
+y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}} \geq \lambda^{\alpha_{1}+\alpha_{2}} y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}} \Rightarrow 1 \geq \lambda^{\alpha_{1}+\alpha_{2}}
+$$
+
+- Take the log of the second expression,
+    $$
+\ln \lambda\left(\alpha_{1}+\alpha_{2}\right) \leq 0
+$$
+
+- Since $\ln \lambda<0$ for $0<\lambda<1$, for weak free disposability we need $\alpha_{1}+\alpha_{2} \geq 0$.
+
+
+----------------
+
+
+ Assuming some of each input is used to produce the output, **derive either the radial input distance function or the directional input distance function.**
+
+- Radial input distance function:
+
+- $$
+D_{I}(\mathbf{x}, \mathbf{y})=\sup _{\beta}\left\{\beta \in \mathbb{R}:\left(\frac{\mathbf{x}}{\beta}, \mathbf{y}\right) \in T\right\}
+$$
+
+- $$
+\left[\left(\frac{x_{1}}{\beta}\right)^{\rho}+\left(\frac{x_{2}}{\beta}\right)^{\rho}+\left(\frac{x_{3}}{\beta}\right)^{\rho}\right]^{\frac{1}{\rho}} \geq y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}} \Rightarrow \frac{1}{\beta}\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}} \geq y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}
+$$
+- $$
+\frac{\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}}}{y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}} \geq \beta \Rightarrow D_{I}(\mathbf{x}, \mathbf{y})=\frac{\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}}}{y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}}
+$$
+
+
+----------------
+
+**Directional input distance function**
+
+- Let $\mathbf{g}=\mathbf{x}$, then,
+
+- $$
+\vec{D}_{I}(\mathbf{x}, \mathbf{y} ; \mathbf{x})=\sup _{\beta}\{\beta \in \mathbb{R}:(\mathbf{x}-\beta \mathbf{x}, \mathbf{y}) \in T\}
+$$
+
+- $$
+\left[\left(x_{1}-\beta x_{1}\right)^{\rho}+\left(x_{2}-\beta x_{2}\right)^{\rho}+\left(x_{3}-\beta x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}} \geq y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}} \Rightarrow(1-\beta)\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}} \geq y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}
+$$
+
+- $$
+\frac{y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}}{\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}}} \leq 1-\beta \Rightarrow \vec{D}_{I}(\mathbf{x}, \mathbf{y} ; \mathbf{x})=1-\frac{\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}}}{y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}}
+$$
+
+---------------------
+
+
+Using the input distance function from part 3 of this problem,**calculate the marginal rate of technical substitution between any two inputs.**
+
+- Take the total derivative of either distance function with respect to the inputs and get the appropriate ratio:
+
+- $$
+d D_{I}(\mathbf{x}, \mathbf{y})=\frac{\partial}{\partial x_{1}} D_{I}(\mathbf{x}, \mathbf{y}) d x_{1}+\frac{\partial}{\partial x_{2}} D_{I}(\mathbf{x}, \mathbf{y}) d x_{2}+\frac{\partial}{\partial x_{3}} D_{I}(\mathbf{x}, \mathbf{y}) d x_{3}=0
+$$
+
+- $$
+\frac{1}{\rho} x_{i}^{\rho-1} \frac{\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}-1}}{y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}} d x_{i}=-\frac{1}{\rho} x_{j}^{\rho-1} \frac{\left[\left(x_{1}\right)^{\rho}+\left(x_{2}\right)^{\rho}+\left(x_{3}\right)^{\rho}\right]^{\frac{1}{\rho}-1}}{y_{1}^{\alpha_{1}} y_{2}^{\alpha_{2}}} d x_{j}
+$$
+
+- $$
+x_{i}^{\rho-1} d x_{i}=-x_{j}^{\rho-1} d x_{j} \Rightarrow \frac{d x_{i}}{d x_{j}}=-\frac{x_{j}^{\rho-1}}{x_{i}^{\rho-1}}=-\left(\frac{x_{j}}{x_{i}}\right)^{\rho-1}
+$$
+
+----------------

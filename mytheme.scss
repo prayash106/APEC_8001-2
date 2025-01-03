@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+
+// colors
+$body-bg:white !default;
+$body-color: black !default;
+$link-color: dodgerblue !default;
+$selection-bg: dodgerblue  !default;
+
+// headings
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-heading-color: royalblue  !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
+
+// Custom bullet point color for unordered lists in Reveal.js slides
+.reveal ul::marker {
+  color: royalblue ; // set bullet point color to red
+}
+
+// Custom marker color for ordered lists in Reveal.js slides
+.reveal ol::marker {
+  color: royalblue ; // set number color for ordered lists to blue
+}
+
+.reveal footer > * {
+  display: flex;
+  justify-content: space-between; /* Ensures text is spread left and right */
+  padding: 0 1em; /* Adds some padding for spacing */
+  font-size: 0.6em; /* Adjusts font size if needed */
+}
+
+.reveal footer .left-footer > * {
+  text-align: left;
+}
+
+.reveal footer .right-footer > * {
+  text-align: right;
+}
+
+.reveal .footer > * {
+	background-color: lavender;
+	color: black;
+}

@@ -1,0 +1,146 @@
+---
+title: "Recitation 3"
+author: "APEC 8001"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8001 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## ![](pic2.png){widtht=100%}
+
+-------------------
+
+::: {style="font-size: 80%;"}
+**Consider the utility function** $u(x_1, x_2) = x_1^\beta x_2^{1-\beta}$, with budget constraint $w = p_1 x_1 + p_2 x_2$ and ($0 < \beta < 1$).**Use utility maximization to derive the Walrasian demands** $x_1(p, w)$ and $x_2(p, w)$. Does this meet the proper homogeneity requirement?
+
+-   The Lagrangian is: $$
+    L = x_1^\beta x_2^{1-\beta} + \lambda (w - p_1 x_1 - p_2 x_2)
+    $$
+
+-   Taking first-order conditions: $$
+    \frac{\partial L}{\partial x_1} = \beta x_1^{\beta-1} x_2^{1-\beta} - \lambda p_1 = 0 $$
+    $$
+    \frac{\partial L}{\partial x_2} = (1-\beta) x_1^\beta x_2^{-\beta} - \lambda p_2 = 0 $$
+    $$
+    \frac{\partial L}{\partial \lambda} = w - p_1 x_1 - p_2 x_2 = 0 $$
+    
+- Solving for $\lambda$ from the first two F.O.C.s and equating:$$
+\beta x_2 p_2 = (1-\beta) x_1 p_1 \quad \Rightarrow \quad x_2 = x_1 \frac{p_1}{p_2} \frac{1-\beta}{\beta} $$
+
+- Substitute this expression into the budget constraint and solve for $x_1$: $x_1^* = \frac{w \beta}{p_1}$, $x_2^* = \frac{w (1-\beta)}{p_2}$
+
+-   **Yes**, these demands are homogeneous of degree zero in prices and wealth.
+:::
+::: footer
+:::
+------------------------------------------------------------------------
+
+::: {style="font-size: 80%;"}
+**Use expenditure minimization to derive the Hicksian demands** $h_1(p, u)$ and $h_2(p, u)$. Does this meet the proper homogeneity requirement?
+
+-   The Lagrangian is: $$
+    L = p_1 x_1 + p_2 x_2 + \lambda (u - x_1^\beta x_2^{1-\beta})
+    $$
+
+-   Taking first-order conditions: 
+
+-   Solving for $\lambda$ and equating the first two F.O.C.s: $$
+    \beta x_2 p_2 = (1-\beta) x_1 p_1 \quad \Rightarrow \quad x_2 = x_1 \frac{p_1}{p_2}      \frac{1-\beta}{\beta} $$
+
+- Substituting into the utility constraint and solving for $x_1$ and then for $x_2$: $$
+    h_1^* = u \left( \frac{p_2}{p_1} \right)^{1-\beta} \left( \frac{\beta}{1-\beta} \right)^{1-\beta} $$ 
+    $$
+    h_2^* = u \left( \frac{p_1}{p_2} \right)^{\beta} \left( \frac{1-\beta}{\beta} \right)^{\beta} $$
+  
+- **Yes**, these are homogeneous of degree zero in prices.
+:::
+::: footer
+:::
+------------------------------------------------------------------------
+
+**Derive the indirect utility function** $v(p, w)$. Does this meet the proper homogeneity requirement?
+
+-   $$v(p, w) = u = \left( \frac{w \beta}{p_1} \right)^\beta \left( \frac{w (1-\beta)}{p_2} \right)^{1-\beta} = w \beta^\beta (1-\beta)^{1-\beta} p_1^{-\beta} p_2^{-(1-\beta)} $$
+
+-   **Yes**, this is homogeneous of degree zero in prices and wealth.
+
+------------------------------------------------------------------------
+
+**Derive the expenditure function** $e(p, u)$. Does this meet the proper homogeneity requirement?
+
+-   Substitute the Hicksian demands into the budget constraint to get the expenditure function:$$
+    e(p, u) = p_1 h_1 + p_2 h_2 = u \left[ p_1^\beta p_2^{1-\beta} \beta^{-\beta} (1-\beta)^{-(1-\beta)} \right] $$
+
+-   **Yes**, this is homogeneous of degree one in prices.
+
+------------------------------------------------------------------------
+
+**Given your indirect utility function above derive the Walrasian demands** $x_1(p, w)$ and $x_2(p, w)$?
+
+-   Roy's identity:
+
+-   $$x_1(p, w) = -\frac{\frac{\partial v(p, w)}{\partial p_1}}{\frac{\partial v(p, w)}{\partial w}} = \frac{w \beta}{p_1} $$
+
+-   $$x_2(p, w) = -\frac{\frac{\partial v(p, w)}{\partial p_2}}{\frac{\partial v(p, w)}{\partial w}} = \frac{w (1-\beta)}{p_2} $$
+
+------------------------------------------------------------------------
+
+**Given your expenditure function above, derive the Hicksian demands ?**
+
+-   Shepherd's lemma:
+
+-   $$h_1(p, u) = \frac{\partial e(p, u)}{\partial p_1} = u \left( \frac{p_2}{p_1} \right)^{1-\beta} \left( \frac{\beta}{1-\beta} \right)^{1-\beta} $$
+
+-   $$h_2(p, u) = \frac{\partial e(p, u)}{\partial p_2} = u \left( \frac{p_1}{p_2} \right)^\beta \left( \frac{1-\beta}{\beta} \right)^\beta $$
+
+------------------------------------------------------------------------
+
+**Use the indirect utility function and Hicksian demands to derive the Walrasian demands ?**
+
+-   $$h_1(p, v(p, w)) = v(p, w) \left( \frac{p_2}{p_1} \right)^{1-\beta} \left( \frac{\beta}{1-\beta} \right)^{1-\beta} = \frac{w \beta}{p_1} $$
+
+-   $$h_2(p, v(p, w)) = v(p, w) \left( \frac{p_1}{p_2} \right)^\beta \left( \frac{1-\beta}{\beta} \right)^\beta = \frac{w (1-\beta)}{p_2} $$
+
+------------------------------------------------------------------------
+
+**Use the expenditure function and walrasian demands to derive the Hicksian demands?**
+
+-   $$x_1(p, e(p, u)) = e(p, u) \beta / p_1 = u \left( \frac{p_2}{p_1} \right)^{1-\beta} \left( \frac{\beta}{1-\beta} \right)^{1-\beta} $$
+
+-   $$x_2(p, e(p, u)) = e(p, u) (1-\beta) / p_2 = u \left( \frac{p_1}{p_2} \right)^\beta \left( \frac{1-\beta}{\beta} \right)^\beta $$
+
+------------------------------------------------------------------------
+
+**Given your expenditure function, derive the indirect utility function ?**
+
+- Solve for u given the expenditure function: 
+
+- $$e(p, u) = u p_1^\beta p_2^{1-\beta} \beta^{-\beta} (1-\beta)^{-(1-\beta)} $$
+
+- $$w = u p_1^\beta p_2^{1-\beta} \beta^{-\beta} (1-\beta)^{-(1-\beta)} $$
+
+- $$v(p,w) = \frac{w \beta^{\beta} (1-\beta)^{(1-\beta)}}{{p_1^\beta p_2^{1-\beta} }} $$
+
+------------------------------------------------------------------------
+
+**Given your Hicksian and Walrasian demands, verify the Slutsky equation for the total change in Walrasian demand for good 1 due to a change in the price of good 2.**
+
+- Recall the Slutsky equation:$$ 
+    \frac{\partial x_\ell(p, w)}{\partial p_k} = \frac{\partial h_\ell(p, u)}{\partial p_k} - \frac{\partial x_\ell(p, w)}{\partial w} x_k(p, w) $$ 
+
+- For a change in demand for good 1 due to a change in the price of good 2:$$ 
+    \frac{\partial x_1(p, w)}{\partial p_2} = \frac{\partial h_1(p, u)}{\partial p_2} - \frac{\partial x_1(p, w)}{\partial w} x_2(p, w) $$ 
+
+- Both effects sum to zero.
+
+------------------------------------------------------------------------
+
+## Questions ????

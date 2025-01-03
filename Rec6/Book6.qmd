@@ -1,0 +1,123 @@
+---
+title: "Recitation 6"
+author: "APEC 8001"
+format: 
+  revealjs:
+    theme: mytheme.scss 
+    slide-number: true
+    incremental: true
+    background-transition: fade
+    footer: "APEC 8001 Recitation"
+    smaller: true
+    scrollable: true
+    center: true
+    auto-stretch: false
+---
+
+## ![Exercise 1](pic1.png){widtht="10%"}
+
+------------------------------------------------------------------------
+
+::: {style="font-size: 80%;"}
+**Formulate the consumer’s expenditure minimization problem**
+
+-   The consumer’s expenditure minimization problem is:$$
+    \min_{h_1, h_2} p_1 h_1 + p_2 h_2 \quad \text{subject to} \quad h_1^{1/3} h_2^{2/3} \geq u$$
+
+**Lagrangian and FOC**
+
+-   The Lagrangian for this problem is:$$
+      \mathcal{L} = p_1 h_1 + p_2 h_2 + \gamma ( u - h_1^{1/3} h_2^{2/3} )$$
+
+-   The first-order conditions are:$$
+      \frac{\partial \mathcal{L}}{\partial h_1} = p_1 - \gamma \frac{1}{3} h_1^{-2/3} h_2^{2/3} = 0$$ $$
+      \frac{\partial \mathcal{L}}{\partial h_2} = p_2 - \gamma \frac{2}{3} h_1^{1/3} h_2^{-1/3} = 0$$ $$
+      \frac{\partial \mathcal{L}}{\partial \gamma} = u - h_1^{1/3} h_2^{2/3} = 0$$
+:::
+
+::: footer
+:::
+
+------------------------------------------------------------------------
+
+**Solve for the Hicksian demands**
+
+-   For an interior solution, the first equation gives:$$
+      \frac{p_1}{p_2} = \frac{\gamma \frac{1}{3} h_1^{-2/3} h_2^{2/3}}{\gamma \frac{2}{3} h_1^{1/3} h_2^{-1/3}}$$
+
+-   Solving this yields the Hicksian demand functions:$$
+      h_1(p_1, p_2, u) = (\frac{p_2}{2p_1})^{2/3} u$$ $$
+      h_2(p_1, p_2, u) = (\frac{2p_1}{p_2})^{1/3} u$$
+
+------------------------------------------------------------------------
+
+**Expenditure function and HOD1**
+
+-   The expenditure function is:$$
+    e(p_1, p_2, u) = p_1 h_1(p_1, p_2, u) + p_2 h_2(p_1, p_2, u) = ({\frac{1}{2}}^{2/3}+2^{1/3})p_1^{1/3}p_2^{2/3}u$$
+
+-   To show that it is homogeneous of degree 1 in prices, note that:$$
+      e(\lambda p_1, \lambda p_2, u) = \lambda e(p_1, p_2, u)$$
+
+------------------------------------------------------------------------
+
+## ![](pic2.png){widtht="10%"}
+
+------------------------------------------------------------------------
+
+**Consider two utility functions for an amount of money** $c > 0$:$$
+    u_1(c) = 1 - c^{-1} \quad \text{and} \quad u_2(c) = \frac{c}{(1+c)}$$
+
+a)  For the first utility function, check whether it is increasing in $c$ for all $c > 0$. If so, is it also strictly increasing? Also, check whether it is concave, strictly concave, or not concave for all $c > 0$.
+
+-   To check whether $u_1(c)$ is increasing, differentiate with respect to $c$:$$
+      u_1'(c) = c^{-2}$$
+
+-   This is clearly positive for all $c > 0$, so $u_1(c)$ is strictly increasing in $c$.
+
+-   To check for concavity, take the second derivative:$$
+       u_1''(c) = -2c^{-3}$$
+
+-   This is clearly negative for all $c > 0$, so $u_1(c)$ is strictly concave in $c$.
+
+------------------------------------------------------------------------
+
+b)  **For the second utility function, check whether it is increasing** in $c$ for all $c > 0$. If so, is it also strictly increasing? Also, check whether it is concave, strictly concave, or not concave for all $c > 0$.
+
+-   To check whether $u_2(c)$ is increasing, differentiate with respect to $c$:$$
+      u_2'(c) = \frac{1}{(1+c)^2}$$
+
+-   This is clearly positive for all $c > 0$, so $u_2(c)$ is strictly increasing in $c$.
+
+-   To check for concavity, take the second derivative:$$
+      u_2''(c) = -2{(1+c)^{-3}}$$
+
+-   This is clearly negative for all $c > 0$, so $u_2(c)$ is strictly concave in $c$.
+
+------------------------------------------------------------------------
+
+c)  **For both these utility functions, calculate the Arrow-Pratt coefficient of absolute risk aversion. According to this criterion, which utility function has more absolute risk aversion?**
+
+-   The coefficient of absolute risk aversion is $r(c) = -\frac{u''(c)}{u'(c)}$.
+
+-   For $u_1(c)$, this definition implies:$$
+      r_1(c) =\frac{2}{c}$$
+
+-   For $u_2(c)$, this definition implies:$$
+    r_2(c) = \frac{2}{1+c}$$
+
+-   The denominator for the first is $c$, while for the second it is $c+1$. Since $c < 1 + c$, $\frac{2}{c} > \frac{2}{1+c}$, so the coefficient of absolute risk aversion is higher for $u_1(c)$ than for $u_2(c)$, for all values of $c$.
+
+------------------------------------------------------------------------
+
+d)  **For both these utility functions, calculate the Arrow-Pratt coefficient of relative risk aversion. According to this criterion, which utility function has more relative risk aversion?**
+
+-   The coefficient of relative risk aversion is $r(c) = -c\frac{u''(c)}{u'(c)}$.
+
+-   For $u_1(c)$, this definition implies:$$
+      r_1(c) = 2$$
+
+-   For $u_2(c)$, this definition implies:$$
+      r_2(c) = \frac{2c}{1+c}$$
+
+-   The difference in these coefficients of relative risk aversion is $r_2(c) = r_1(c) \cdot \frac{c}{1+c}$. Since $\frac{c}{1+c} < 1$ for all $c > 0$, $r_1(c) > r_2(c)$ for all $c > 0$.
